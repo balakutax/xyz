@@ -1,0 +1,39 @@
+﻿@model IEnumerable<RJ.Tokoku.DataLayer.Products.ProductGroup>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductGroupCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductGroupCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Recid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { item.ProductGroupCode }) |
+            @Html.ActionLink("Details", "Details", new { item.ProductGroupCode }) |
+            @Html.ActionLink("Delete", "Details", new { item.ProductGroupCode, IsDelete = true })
+        </td>
+    </tr>
+}
+
+</table>
